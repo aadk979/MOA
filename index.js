@@ -24,6 +24,7 @@ const limiter = rateLimit({
 });
 
 app.use(limiter);
+app.use(cors({origin: '*'}));
 app.use(requestIp.mw());
 
 app.get("/", (req, res) => {
